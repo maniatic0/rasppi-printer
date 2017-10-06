@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"f",
+				"fromValuesToLine"
+			],
+			[
+				"__",
+				"__repr__"
+			],
+			[
+				"def",
+				"def\tFunction"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
 				"norm",
 				"normalized"
 			],
@@ -16,24 +36,12 @@
 				"normalize"
 			],
 			[
-				"if",
-				"if\tIf Condition"
-			],
-			[
 				"try",
 				"try\tTry/Except"
 			],
 			[
 				"vecto",
 				"Vector3"
-			],
-			[
-				"__",
-				"__repr__"
-			],
-			[
-				"def",
-				"defs\tMethod"
 			],
 			[
 				"N",
@@ -67,6 +75,40 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Utilities/instruction.py",
+			"settings":
+			{
+				"buffer_size": 1942,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Utilities/fileReader.py",
+			"settings":
+			{
+				"buffer_size": 55,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/Christian/Google Drive/Maratones/GANNHAT/gannhat2.cpp",
+			"settings":
+			{
+				"buffer_size": 10334,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Utilities/vector.py",
+			"settings":
+			{
+				"buffer_size": 3386,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -124,10 +166,13 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer"
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities"
 	],
 	"file_history":
 	[
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/vector.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/rasp-proy.sublime-project",
 		"/C/Users/Christian/Google Drive/Libros/Procesando/vector.py",
 		"/C/Users/Christian/Google Drive/Libros/Procesando/rasp-proy.sublime-project",
 		"/C/Users/Christian/Downloads/CollisionAvoidance.cs",
@@ -197,6 +242,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"prog",
+			"pattern"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -204,6 +251,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"_prog",
+			"_pattern"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -214,8 +263,122 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Utilities/instruction.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								53,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Utilities/fileReader.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Christian/Google Drive/Maratones/GANNHAT/gannhat2.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1814,
+								1814
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 855.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Utilities/vector.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								105
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
