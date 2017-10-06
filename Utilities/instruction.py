@@ -17,10 +17,19 @@ class Instruction(object):
 		line = line.rstrip()
 		result = Instruction._prog.match(line)
 		if result is None:
-			raise ValueError(("The instruction format should be \"X Y Z <V>\" but found \"%s\"" % (line)))
-		self.pos = v.Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
+			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
+
+		try:
+			self.pos = v.Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
+		except Exception as e:
+			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
+
+		
 		if result.group('V') is not None:
-			self.V = d.Decimal(result.group('V'))
+			try:
+				self.V = d.Decimal(result.group('V'))
+			except Exception as e:
+				raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
 		else:
 			self.V = None
 

@@ -8,6 +8,7 @@ class FileReader(object):
 	def __init__(self, path):
 		self.path = path
 		self.file = open(self.path, 'r')
+		self.line = 0
 
 	"""Iterator"""
 	def __iter__(self):
@@ -20,20 +21,21 @@ class FileReader(object):
 
 		line = self.file.readline()
 
+		self.line += 1
+
 		if line == "":
 			self.file.close()
 			raise StopIteration
 
 		try:
-			return ins.Instruction(line)
+			ans = ins.Instruction(line)
+			return ans
 		except Exception as e:
-			error_line = self.file.tell()
 			self.file.close()
 			import sys
 			raise type(e)(str(e) 
-				+ ' in file %s at position %s and on the line: %s' % (self.path, error_line, line)).with_traceback(sys.exc_info()[2])
-
-		
+				+ ' in file %s on the line %s' 
+				% (self.path, self.line)).with_traceback(sys.exc_info()[2])
 
 	"""Destructor that ensures the file is closed"""
 	def __del__(self):
@@ -61,5 +63,4 @@ if __name__ == '__main__':
 	except Exception as e:
 		print(e)
 		
-
 	del f
