@@ -57,8 +57,10 @@ class Vector3(object):
 
 	"""Addition"""
 	def __add__(self, other):
-		self += other
-		return self
+		v = Vector3()
+		v += other
+		v += self
+		return v
 
 	"""Reverse Addition"""
 	def __radd__(self, other):
@@ -74,12 +76,26 @@ class Vector3(object):
 
 	"""Scalar Multiplication"""
 	def __mul__(self, other):
-		self *= other
-		return self
+		v = self.copy()
+		v *= other
+		return v
 
 	"""Reverse Addition"""
 	def __rmul__(self, other):
 		return self * other
+
+	"""In place Substraction"""
+	def __isub__(self, other):
+		if not isinstance(other, Vector3):
+			raise TypeError("Expected Vector3 but got '%s'" % str(type(other).__name__))
+		self += (other * -1)
+		return self
+
+	"""Substraction"""
+	def __sub__(self, other):
+		v = self.copy()
+		v -= other
+		return v
 
 	"""Normalize this vector"""
 	def normalize(self):
@@ -99,6 +115,22 @@ class Vector3(object):
 import sys
 module = sys.modules[c.__name__]
 setattr(module, 'START_POSITION', Vector3(0, 0, c.VL))
+
+"""Generates Lineary Interpolated points from p0 to p1 with steps of size EPSILON"""
+def interpolatePoints(p0, p1):
+	direction = p1 - p0
+	length = direction.magnitude()
+	segments = int(length / c.EPSILON)
+	step = length / d.Decimal(segments)
+
+	dist = d.Decimal(0)
+	one = d.Decimal(1)
+
+	while True:
+		yield p0 + (direction * dist)
+		dist += step
+		if dist > one:
+			break
 
 
 if __name__ == '__main__':
@@ -166,14 +198,24 @@ if __name__ == '__main__':
 		v3 = Vector3(1,1,1)
 		a = v3 * 4
 		print(a)
+		print("v3=%s" % str(v3))
 	except Exception as e:
 		print(e.args)
-
 
 	print("Unary minus test")
 	v3 = Vector3(1,2,3)
 	print("v=%s" % str(v3))
 	print("-v=%s" % str(-v3))
+
+	print("Substraction test")
+	v2 = Vector3(1,0,1)
+	v3 = Vector3(1,1,0)
+	print("v2=%s" % str(v2))
+	print("v3=%s" % str(v3))
+	print("v3-v2=%s" % str(v3 - v2))
+	print("v3=%s" % str(v3))
+	v3 -= v2
+	print("(v3-=v2)=%s" % str(v3))
 
 	print("Normalization Tests")
 	v3 = Vector3(1,1,1)
@@ -185,3 +227,10 @@ if __name__ == '__main__':
 	v3 = Vector3(0,0,0)
 	v3.normalize()
 	print(v3)
+
+	print("Interpolation Tests")
+	p0 = Vector3(0, 0, 0)
+	p1 = Vector3(1, 1, 1)
+	a = [v for v in interpolatePoints(p0, p1)]
+	print(a)
+		
