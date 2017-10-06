@@ -1,11 +1,11 @@
 # Made by Christian Oliveros on 04/10/2017 for MMKF15
 
 # Imports Used
+import constants as c
 import decimal as d
 
 
 class Vector3(object):
-	epsilon = 1e-09
 	"""Class that represents a Vector with 3 coordinates"""
 	def __init__(self, x=0.0, y=0.0, z=0.0):
 		super(Vector3, self).__init__()
@@ -84,7 +84,7 @@ class Vector3(object):
 	"""Normalize this vector"""
 	def normalize(self):
 		length = self.magnitude()
-		if length < Vector3.epsilon:
+		if length < c.EPSILON:
 			self *= 0
 			return
 		self *= d.Decimal(1) / length
@@ -95,6 +95,10 @@ class Vector3(object):
 		v.normalize()
 		return v
 
+# Set constant start position
+import sys
+module = sys.modules[c.__name__]
+setattr(module, 'START_POSITION', Vector3(0, 0, c.VL))
 
 
 if __name__ == '__main__':
@@ -181,5 +185,3 @@ if __name__ == '__main__':
 	v3 = Vector3(0,0,0)
 	v3.normalize()
 	print(v3)
-
-
