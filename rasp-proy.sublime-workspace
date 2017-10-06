@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"sq",
+				"sqrt"
+			],
+			[
 				"de",
 				"decimal"
 			],
@@ -101,7 +105,7 @@
 			"file": "Utilities/vector.py",
 			"settings":
 			{
-				"buffer_size": 4610,
+				"buffer_size": 5193,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -240,7 +244,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -275,7 +279,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -300,7 +304,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 691.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -330,10 +334,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 818.0,
+						"translation.y": 632.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -342,15 +346,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4610,
+						"buffer_size": 5193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3928,
-								3928
+								5091,
+								5091
 							]
 						],
 						"settings":
@@ -359,10 +363,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1651.0,
+						"translation.y": 3406.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -378,8 +382,8 @@
 						"selection":
 						[
 							[
-								344,
-								344
+								179,
+								179
 							]
 						],
 						"settings":
@@ -390,7 +394,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -429,7 +433,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 102.0
+		"height": 87.0
 	},
 	"output.find_results":
 	{

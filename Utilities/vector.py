@@ -247,4 +247,6 @@ if __name__ == '__main__':
 	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON / d.Decimal(2), 0))])
 	print("Interpolation test for points really close")
 	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON, 0))])
+	print("Interpolation test for points almost really close")
+	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON * d.Decimal(2), 0))])
 		
