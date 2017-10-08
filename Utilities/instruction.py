@@ -7,7 +7,7 @@ import vector as v
 
 class Instruction(object):
 	"""Regex pattern"""
-	_pattern = r"^(?P<X>([^\s])+) (?P<Y>([^\s])+) (?P<Z>([^\s])+)( (?P<V>([^\s])+))?(\s)*$"
+	_pattern = r"^(\s)*(?P<X>([^\s])+) (?P<Y>([^\s])+) (?P<Z>([^\s])+)( (?P<V>([^\s])+))?(\s)*$"
 	"""Regex state machine"""
 	_prog = re.compile(_pattern)
 	"""Instruction for the Arm
@@ -47,6 +47,23 @@ class Instruction(object):
 	"""Instruction string representation"""
 	def __str__(self):
 		return Instruction.fromValuesToLine(self.pos.x, self.pos.y, self.pos.z, self.V)
+
+
+class InterpretedInstruction(object):
+	"""Intruction with vector position and velocity"""
+	def __init__(self, pos, vel):
+		super(InterpretedInstruction, self).__init__()
+		self.pos = pos
+		self.vel = vel
+
+	"""Interpreted Instruction representation"""
+	def __repr__(self):
+		return "InterpretedInstruction(pos=%r,vel=%r)" % (self.pos, self.vel)
+
+	"""Interpreted Instruction string representation"""
+	def __str__(self):
+		return "(pos=%s,vel=%s)" % (self.pos, self.vel)
+		
 
 if __name__ == '__main__':
 	Instruction("1 2 3")

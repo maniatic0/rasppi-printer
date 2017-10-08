@@ -4,7 +4,7 @@
 import decimal as d
 
 # Minimun possible movement and tolerance of math calculations
-EPSILON = d.Decimal(1e-05)
+EPSILON = d.Decimal(1e-03)
 # I.e. if(abs(p0-p1) < EPSILON) then p0==p1
 
 # Height of the roof of the 3d printer

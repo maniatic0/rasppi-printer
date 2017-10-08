@@ -2,6 +2,8 @@
 
 # Imports Used
 import instruction as ins
+import vector as vec
+import constants as c
 
 class FileReader(object):
 	"""File Reader for Instructions on a file"""
@@ -28,6 +30,9 @@ class FileReader(object):
 			raise StopIteration
 
 		try:
+			line = line.lstrip()
+			if len(line) == 0:
+				return self.__next__()
 			ans = ins.Instruction(line)
 			return ans
 		except Exception as e:
@@ -41,6 +46,47 @@ class FileReader(object):
 	def __del__(self):
 		if not self.file.closed:
 			self.file.close()
+
+
+def generatePathTrajectory(path):
+	f = FileReader(path)
+	traj = []
+	current_vel = c.START_VELOCITY
+	current_pos = c.START_POSITION
+	started = False
+	for instruction in f:
+		if instruction.V is not None:
+			current_vel = instruction.V
+
+		# Amount of points in interpolation, used to know if we moved
+		count = 0
+
+		for pos in vec.interpolatePoints(current_pos, instruction.pos):
+			# Lets not put the original starting position of the arm
+			traj.append(ins.InterpretedInstruction(pos, (pos - current_pos).normalized() * current_vel))
+			current_pos = pos
+			count += 1
+
+		if not started:
+			started = True
+			del traj[0]
+			# We moved to the origin from the origin
+			if len(traj) == 0 :
+				started = False
+			continue
+
+		# We actually moved
+		if count > 1 :
+			traj[len(traj) - 1].vel = vec.Vector3()
+		# We didn't move
+		else:
+			size = len(traj)
+			if size > 0:
+				del traj[size - 1]
+				current_pos = traj[size - 2].pos
+
+	return traj
+
 
 
 if __name__ == '__main__':
@@ -64,3 +110,11 @@ if __name__ == '__main__':
 		print(e)
 		
 	del f
+
+	print("Test of Path Trajectory")
+	print("Generation Start")
+	traj = generatePathTrajectory(os.path.relpath(os.path.join("Test", "correct_test.txt"), start=os.curdir))
+	print("Generation Done")
+	print("len=%s" % len(traj))
+	print("pos0=%s" % traj[0])
+	print("pos%s=%s" % (len(traj) - 1,traj[len(traj) - 1]))

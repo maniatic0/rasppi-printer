@@ -87,7 +87,8 @@ class Vector3(object):
 	"""In place Substraction"""
 	def __isub__(self, other):
 		if not isinstance(other, Vector3):
-			raise TypeError("Expected Vector3 but got '%s'" % str(type(other).__name__))
+			msg = "Expected Vector3 but got '%s'" % str(type(other).__name__)
+			raise TypeError(msg)
 		self += (other * -1)
 		return self
 
