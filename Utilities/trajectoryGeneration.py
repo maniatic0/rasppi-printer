@@ -51,7 +51,6 @@ def generateCartesianPathTrajectory(fileReader, start_vel=c.START_VELOCITY, star
 		for ans in traj:
 			yield ans
 
-
 """Calculate one joint position"""
 def _iKinePos(X, Y, Z):
 	return -(c.LSQR - (X)**2 - (Y)**2).sqrt() - Z + c.VL
@@ -86,6 +85,10 @@ def iKine(cartesian_instruction):
 	return ins.InterpretedInstruction(q, q_vel)
 
 
+"""Generates the joint trajectory from a file reader, a start velocity and a start position"""
+def generateJointPathTrajectory(fileReader, start_vel=c.START_VELOCITY, start_pos=c.START_POSITION):
+	for instruction in generateCartesianPathTrajectory(fileReader, start_vel, start_pos):
+		yield iKine(instruction)
 
 if __name__ == '__main__':
 	import os
@@ -101,3 +104,15 @@ if __name__ == '__main__':
 	print("pos%s=%s" % (len(traj) - 3,traj[len(traj) - 3]))
 	print("iKine Test")
 	print(iKine(ins.InterpretedInstruction(vec.Vector3(10, 20, 30), vec.Vector3(10, 20, 30).normalized())))
+	print("Joint Trajectory")
+	f = reader.FileReader(os.path.relpath(os.path.join("Test", "correct_test.txt"), start=os.curdir))
+	print("Generation Start")
+	jtraj = [x for x in generateJointPathTrajectory(f)]
+	print("Generation Done")
+	print("len=%s" % len(jtraj))
+	print("pos0=%s" % jtraj[0])
+	print("pos%s=%s" % (len(jtraj) - 1,jtraj[len(jtraj) - 1]))
+	print("pos%s=%s" % (len(jtraj) - 2,jtraj[len(jtraj) - 2]))
+	print("pos%s=%s" % (len(jtraj) - 3,jtraj[len(jtraj) - 3]))
+
+
