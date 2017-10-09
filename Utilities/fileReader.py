@@ -1,7 +1,11 @@
 # Made by Christian Oliveros on 06/10/2017 for MMKF15
 
 # Imports Used
-import instruction as ins
+try:
+	from .instruction import Instruction
+except SystemError as e:
+	from instruction import Instruction
+
 
 class FileReader(object):
 	"""File Reader for Instructions on a file"""
@@ -31,7 +35,7 @@ class FileReader(object):
 			line = line.lstrip()
 			if len(line) == 0:
 				return self.__next__()
-			ans = ins.Instruction(line)
+			ans = Instruction(line)
 			return ans
 		except Exception as e:
 			self.file.close()

@@ -1,8 +1,15 @@
 # Made by Christian Oliveros on 04/10/2017 for MMKF15
 
 # Imports Used
-import constants as c
 import decimal as d
+
+try:
+	from .constants import VL, EPSILON
+	from .constants import __name__ as constants_module_name
+except SystemError as e:
+	from constants import VL, EPSILON
+	from constants import __name__ as constants_module_name
+
 
 
 class Vector3(object):
@@ -101,7 +108,7 @@ class Vector3(object):
 	"""Normalize this vector"""
 	def normalize(self):
 		length = self.magnitude()
-		if length < c.EPSILON:
+		if length < EPSILON:
 			self *= 0
 			return
 		self *= d.Decimal(1) / length
@@ -114,21 +121,21 @@ class Vector3(object):
 
 # Set constant start position
 import sys
-module = sys.modules[c.__name__]
-setattr(module, 'START_POSITION', Vector3(0, 0, c.VL))
+module = sys.modules[constants_module_name]
+setattr(module, 'START_POSITION', Vector3(0, 0, VL))
 
 """Generates Lineary Interpolated points from p0 to p1 with steps of size EPSILON"""
 def interpolatePoints(p0, p1):
 	direction = p1 - p0
 	length_sqr = direction.sqrMagnitude()
-	if length_sqr < c.EPSILON**2:
+	if length_sqr < EPSILON**2:
 		yield p0
 		return
 
 	dist = d.Decimal(0)
 	one = d.Decimal(1)
 
-	segments = int(length_sqr.sqrt() / c.EPSILON)
+	segments = int(length_sqr.sqrt() / EPSILON)
 	if segments == 1:
 		yield p0
 		yield p1
@@ -245,9 +252,9 @@ if __name__ == '__main__':
 	print("Too long to print but it is here, uncomment if want to see")
 	#print(a)
 	print("Interpolation test for points too close")
-	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON / d.Decimal(2), 0))])
+	print([v for v in interpolatePoints(p0, Vector3(0, EPSILON / d.Decimal(2), 0))])
 	print("Interpolation test for points really close")
-	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON, 0))])
+	print([v for v in interpolatePoints(p0, Vector3(0, EPSILON, 0))])
 	print("Interpolation test for points almost really close")
-	print([v for v in interpolatePoints(p0, Vector3(0, c.EPSILON * d.Decimal(2), 0))])
+	print([v for v in interpolatePoints(p0, Vector3(0, EPSILON * d.Decimal(2), 0))])
 		

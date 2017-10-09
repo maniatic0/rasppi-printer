@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"ge",
+				"generateJointPathTrajectory"
+			],
+			[
+				"ins",
+				"instruction"
+			],
+			[
+				"st",
+				"START_POSITION"
+			],
+			[
+				"star",
+				"START_VELOCITY"
+			],
+			[
+				"fi",
+				"fileReader"
+			],
+			[
 				"deg2rad",
 				"DEG2RAD"
 			],
@@ -22,10 +42,6 @@
 			[
 				"if",
 				"ifmain\tif __name__ == '__main__'"
-			],
-			[
-				"star",
-				"started"
 			],
 			[
 				"in",
@@ -125,7 +141,7 @@
 			"file": "Utilities/trajectoryGeneration.py",
 			"settings":
 			{
-				"buffer_size": 2137,
+				"buffer_size": 4008,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -199,7 +215,7 @@
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 130.0,
 		"history":
 		[
 		]
@@ -388,15 +404,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2137,
+						"buffer_size": 4008,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1490,
-								1490
+								3764,
+								3767
 							]
 						],
 						"settings":
@@ -404,7 +420,7 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 1311.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -433,10 +449,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1831.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -452,8 +468,8 @@
 						"selection":
 						[
 							[
-								333,
-								337
+								1431,
+								1431
 							]
 						],
 						"settings":
@@ -461,10 +477,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 531.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -492,7 +508,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1395.0,
+						"translation.y": 902.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -534,7 +550,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 280.0
+		"height": 155.0
 	},
 	"output.find_results":
 	{
@@ -544,7 +560,7 @@
 	"project": "rasp-proy.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

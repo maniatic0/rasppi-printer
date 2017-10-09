@@ -3,7 +3,11 @@
 # Imports Used
 import decimal as d
 import re
-import vector as v
+
+try:
+	from .vector import Vector3
+except SystemError as e:
+	from vector import Vector3
 
 class Instruction(object):
 	"""Regex pattern"""
@@ -20,7 +24,7 @@ class Instruction(object):
 			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
 
 		try:
-			self.pos = v.Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
+			self.pos = Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
 		except Exception as e:
 			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
 
