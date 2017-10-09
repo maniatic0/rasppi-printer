@@ -4,16 +4,32 @@
 		"selected_items":
 		[
 			[
+				"deg2rad",
+				"DEG2RAD"
+			],
+			[
+				"Ve",
+				"Vector3"
+			],
+			[
+				"re",
+				"reader"
+			],
+			[
+				"cur",
+				"current_pos"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
 				"star",
 				"started"
 			],
 			[
 				"in",
 				"instruction"
-			],
-			[
-				"if",
-				"if\tIf Condition"
 			],
 			[
 				"sq",
@@ -34,10 +50,6 @@
 			[
 				"def",
 				"def\tFunction"
-			],
-			[
-				"re",
-				"result"
 			],
 			[
 				"norm",
@@ -104,16 +116,16 @@
 			"file": "Utilities/fileReader.py",
 			"settings":
 			{
-				"buffer_size": 2822,
+				"buffer_size": 1342,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Utilities/Test/correct_test.txt",
+			"file": "Utilities/trajectoryGeneration.py",
 			"settings":
 			{
-				"buffer_size": 51,
+				"buffer_size": 2137,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -131,9 +143,19 @@
 			"file": "Utilities/constants.py",
 			"settings":
 			{
-				"buffer_size": 474,
+				"buffer_size": 1431,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Utilities/decimalMath.py",
+			"settings":
+			{
+				"buffer_size": 2518,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "# Extracted from https://docs.python.org/3/library"
 			}
 		}
 	],
@@ -199,9 +221,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/correct_test.txt",
 		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/bad_test.txt",
 		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/vector.py",
-		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/correct_test.txt",
 		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/correct_test.text",
 		"/C/Users/Christian/Google Drive/Maratones/GANNHAT/gannhat2.cpp",
 		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/vector.py",
@@ -275,6 +297,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"generatePathTrajectory",
+			"ins",
 			"prog",
 			"pattern"
 		],
@@ -284,6 +308,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"generateCartesianPathTrajectory",
 			"_prog",
 			"_pattern"
 		],
@@ -296,7 +321,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -324,7 +349,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -333,15 +358,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2822,
+						"buffer_size": 1342,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2110,
-								2110
+								70,
+								95
 							]
 						],
 						"settings":
@@ -351,38 +376,38 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1087.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "Utilities/Test/correct_test.txt",
+					"file": "Utilities/trajectoryGeneration.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 51,
+						"buffer_size": 2137,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
+								1490,
+								1490
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 630.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -398,8 +423,8 @@
 						"selection":
 						[
 							[
-								2047,
-								2047
+								5206,
+								5206
 							]
 						],
 						"settings":
@@ -408,10 +433,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1203.0,
+						"translation.y": 1831.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -420,15 +445,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 474,
+						"buffer_size": 1431,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								174,
-								179
+								333,
+								337
 							]
 						],
 						"settings":
@@ -440,6 +465,37 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Utilities/decimalMath.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2467,
+								2467
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# Extracted from https://docs.python.org/3/library",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1395.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -488,7 +544,7 @@
 	"project": "rasp-proy.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

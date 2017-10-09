@@ -6,8 +6,8 @@ import instruction as ins
 import vector as vec
 import constants as c
 
-
-def generatePathTrajectory(fileReader, start_vel=c.START_VELOCITY, start_pos=c.START_POSITION):
+"""Generates the cartesian trajectory from a file reader, a start velocity and a start position"""
+def generateCartesianPathTrajectory(fileReader, start_vel=c.START_VELOCITY, start_pos=c.START_POSITION):
 	traj = []
 	current_vel = start_vel
 	current_pos = start_pos
@@ -51,10 +51,40 @@ def generatePathTrajectory(fileReader, start_vel=c.START_VELOCITY, start_pos=c.S
 		for ans in traj:
 			yield ans
 
-	# TODO : volver esto un iterador y devolver cada posicion creada
-	# Aceptar posicion inicial, velocidad inicial y lector generico
-	# mover esto de lugar
-	# Hacer jtraj basado en esto
+
+"""Calculate one joint position"""
+def _iKinePos(X, Y, Z):
+	return -(c.LSQR - (X)**2 - (Y)**2).sqrt() - Z + c.VL
+
+"""Calculate one joint velocity"""
+def _iKineVel(X, Y, Z, vel, q):
+	return - ((X * vel.x + Y * vel.y) / (Z - c.VL + q)) - vel.z
+
+"""Receives a cartesian instruction and converts it to an joint one"""
+def iKine(cartesian_instruction):
+	sub_x_1 = cartesian_instruction.pos.x - c.POS_X_1
+	sub_y_1 = cartesian_instruction.pos.y - c.POS_Y_1
+
+	sub_x_2 = cartesian_instruction.pos.x - c.POS_X_2
+	sub_y_2 = cartesian_instruction.pos.y - c.POS_Y_2
+
+	sub_x_3 = cartesian_instruction.pos.x - c.POS_X_3
+	sub_y_3 = cartesian_instruction.pos.y - c.POS_Y_3
+
+	q = vec.Vector3()
+
+	q.x = _iKinePos(sub_x_1, sub_y_1, cartesian_instruction.pos.z)
+	q.y = _iKinePos(sub_x_2, sub_y_2, cartesian_instruction.pos.z)
+	q.z = _iKinePos(sub_x_3, sub_y_3, cartesian_instruction.pos.z)
+
+	q_vel = vec.Vector3()
+
+	q_vel.x = _iKineVel(sub_x_1, sub_y_1, cartesian_instruction.pos.z, cartesian_instruction.vel, q.x)
+	q_vel.y = _iKineVel(sub_x_2, sub_y_2, cartesian_instruction.pos.z, cartesian_instruction.vel, q.y)
+	q_vel.z = _iKineVel(sub_x_3, sub_y_3, cartesian_instruction.pos.z, cartesian_instruction.vel, q.z)
+
+	return ins.InterpretedInstruction(q, q_vel)
+
 
 
 if __name__ == '__main__':
@@ -62,10 +92,12 @@ if __name__ == '__main__':
 	print("Test of Path Trajectory")
 	print("Generation Start")
 	f = reader.FileReader(os.path.relpath(os.path.join("Test", "correct_test.txt"), start=os.curdir))
-	traj = [x for x in generatePathTrajectory(f)]
+	traj = [x for x in generateCartesianPathTrajectory(f)]
 	print("Generation Done")
 	print("len=%s" % len(traj))
 	print("pos0=%s" % traj[0])
 	print("pos%s=%s" % (len(traj) - 1,traj[len(traj) - 1]))
 	print("pos%s=%s" % (len(traj) - 2,traj[len(traj) - 2]))
 	print("pos%s=%s" % (len(traj) - 3,traj[len(traj) - 3]))
+	print("iKine Test")
+	print(iKine(ins.InterpretedInstruction(vec.Vector3(10, 20, 30), vec.Vector3(10, 20, 30).normalized())))
