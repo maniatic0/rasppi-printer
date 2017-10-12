@@ -28,6 +28,7 @@ def main():
 	f = reader.FileReader(sys.argv[1])
 
 	print("Initializing Movement")
+	q_prev_pos = None
 	for joints in trajectoryGeneration.generateJointPathTrajectory(f):
 		print("Following Instruction")
 		# TODO: REAL MOTORS GO HERE
@@ -37,6 +38,7 @@ def main():
 		time.sleep(0.5)
 		# TODO: REAL MOTORS GO HERE
 		print("Instruction Done")
+		q_prev_pos = joints.pos
 	print("Movement Done")
 	exit(0)
 
