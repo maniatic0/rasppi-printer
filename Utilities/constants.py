@@ -69,3 +69,7 @@ START_POSITION = None
 
 # The Velocity that the robot is going to use if no one is supplied at start in mm/s
 START_VELOCITY = d.Decimal(1)
+
+# Start Joint Position of the robot
+# It is defined in trajectoryGeneration.py
+START_JOINT_POSITION = None

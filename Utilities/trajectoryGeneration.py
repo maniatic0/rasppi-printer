@@ -102,7 +102,44 @@ def generateJointPathTrajectory(fileReader, start_vel=START_VELOCITY, start_pos=
 	for instruction in generateCartesianPathTrajectory(fileReader, start_vel, start_pos):
 		yield iKine(instruction)
 
+
+# Set constant joint start position
+def _setConstants():
+	try:
+		from .constants import __name__ as constants_module_name
+	except SystemError as e:
+		from constants import __name__ as constants_module_name
+
+	sub_x_1 = START_POSITION.x - POS_X_1
+	sub_y_1 = START_POSITION.y - POS_Y_1
+
+	sub_x_2 = START_POSITION.x - POS_X_2
+	sub_y_2 = START_POSITION.y - POS_Y_2
+
+	sub_x_3 = START_POSITION.x - POS_X_3
+	sub_y_3 = START_POSITION.y - POS_Y_3
+
+	q = Vector3()
+
+	q.x = _iKinePos(sub_x_1, sub_y_1, START_POSITION.z)
+	q.y = _iKinePos(sub_x_2, sub_y_2, START_POSITION.z)
+	q.z = _iKinePos(sub_x_3, sub_y_3, START_POSITION.z)
+
+	import sys
+	module = sys.modules[constants_module_name]
+	setattr(module, 'START_JOINT_POSITION', q)
+
+_setConstants()
+
 if __name__ == '__main__':
+	print("START_JOINT_POSITION Test")
+	try:
+		from .constants import START_JOINT_POSITION
+	except SystemError as e:
+		from constants import START_JOINT_POSITION
+
+	print("START_JOINT_POSITION=%s" % START_JOINT_POSITION)
+
 	import os
 	print("Test of Path Trajectory")
 	print("Generation Start")

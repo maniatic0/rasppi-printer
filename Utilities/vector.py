@@ -5,10 +5,8 @@ import decimal as d
 
 try:
 	from .constants import VL, EPSILON
-	from .constants import __name__ as constants_module_name
 except SystemError as e:
 	from constants import VL, EPSILON
-	from constants import __name__ as constants_module_name
 
 
 
@@ -120,9 +118,16 @@ class Vector3(object):
 		return v
 
 # Set constant start position
-import sys
-module = sys.modules[constants_module_name]
-setattr(module, 'START_POSITION', Vector3(0, 0, VL))
+def _setConstants():
+	try:
+		from .constants import __name__ as constants_module_name
+	except SystemError as e:
+		from constants import __name__ as constants_module_name
+	import sys
+	module = sys.modules[constants_module_name]
+	setattr(module, 'START_POSITION', Vector3(0, 0, VL))
+
+_setConstants()
 
 """Generates Lineary Interpolated points from p0 to p1 with steps of size EPSILON"""
 def interpolatePoints(p0, p1):
@@ -249,7 +254,7 @@ if __name__ == '__main__':
 	p0 = Vector3(0, 0, 0)
 	p1 = Vector3(1, 1, 1)
 	a = [v for v in interpolatePoints(p0, p1)]
-	print("Too long to print but it is here, uncomment if want to see")
+	print("Too long to print but it is here, uncomment if want you to see")
 	#print(a)
 	print("Interpolation test for points too close")
 	print([v for v in interpolatePoints(p0, Vector3(0, EPSILON / d.Decimal(2), 0))])
