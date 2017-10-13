@@ -121,11 +121,13 @@ class Vector3(object):
 def _setConstants():
 	try:
 		from .constants import __name__ as constants_module_name
+		from .constants import START_POSITION_HEIGHT_OFFSET
 	except SystemError as e:
 		from constants import __name__ as constants_module_name
+		from constants import START_POSITION_HEIGHT_OFFSET
 	import sys
 	module = sys.modules[constants_module_name]
-	setattr(module, 'START_POSITION', Vector3(0, 0, VL))
+	setattr(module, 'START_POSITION', Vector3(0, 0, VL - START_POSITION_HEIGHT_OFFSET))
 
 _setConstants()
 

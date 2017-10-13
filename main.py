@@ -6,6 +6,7 @@ import os
 
 import Utilities.fileReader as reader
 import Utilities.trajectoryGeneration as trajectoryGeneration
+import Utilities.constants as consts
 
 
 
@@ -28,7 +29,7 @@ def main():
 	f = reader.FileReader(sys.argv[1])
 
 	print("Initializing Movement")
-	q_prev_pos = None
+	q_prev_pos = consts.START_JOINT_POSITION
 	for joints in trajectoryGeneration.generateJointPathTrajectory(f):
 		print("Following Instruction")
 		# TODO: REAL MOTORS GO HERE

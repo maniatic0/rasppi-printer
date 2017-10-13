@@ -63,6 +63,10 @@ POS_Y_2 = HL * SIN_THETA2
 POS_X_3 = HL * COS_THETA2
 POS_Y_3 = HL * SIN_THETA2
 
+
+# Start Height Offset against the roof of the robot
+START_POSITION_HEIGHT_OFFSET = d.Decimal(260)
+
 # Start Position of the robot
 # It is defined in vector.py
 START_POSITION = None
