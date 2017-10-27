@@ -50,7 +50,8 @@ def generateCartesianPathTrajectory(fileReader, start_vel=START_VELOCITY, start_
 
 		# We actually moved
 		if count > 1 :
-			traj[len(traj) - 1].vel = Vector3()
+			#traj[len(traj) - 1].vel = Vector3()
+			pass
 		# We didn't move
 		else:
 			size = len(traj)

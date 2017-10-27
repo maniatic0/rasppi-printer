@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # Made by Christian Oliveros on 09/10/2017 for MMKF15
 
 # Imports Used
@@ -46,4 +47,12 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	try:
+		main()
+	except Exception as e:
+		print("Releasing Motors")
+		motor.turnOffMotors()
+		print("Motors Off")
+		print(e)
+		exit(-1)
+		

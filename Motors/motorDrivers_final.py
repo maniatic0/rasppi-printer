@@ -98,6 +98,11 @@ def moveSteppers(qPos, qRec, qVelReq, stepperThreads, numSteps, TOLERANCE):
     q_req = [qRec.x, qRec.y, qRec.z]        
     q_vel_req = [qVelReq.x, qVelReq.y, qVelReq.z]
     TOLERANCE_v = d.Decimal(2)             # before/after this I want the motors to move faster
+    
+    case_v = [True, True, True]
+    for i in range(3):
+        case_v[i] = q_req[i] > q[i] + TOLERANCE + TOLERANCE_v or q_req[i] < q[i] - TOLERANCE - TOLERANCE_v
+    
     print('qRec=', qRec)
     print('q_req =', q_req) 
     print('q_vel_req =', q_vel_req)       
@@ -111,11 +116,11 @@ def moveSteppers(qPos, qRec, qVelReq, stepperThreads, numSteps, TOLERANCE):
             #print('TOLERANCE=', TOLERANCE)                    
             case1 = q_req[i] > q[i] + TOLERANCE            
             case2 = q_req[i] < q[i] - TOLERANCE
-            case_v = q_req[i] > q[i] + TOLERANCE + TOLERANCE_v or q_req[i] < q[i] - TOLERANCE - TOLERANCE_v
+            
             movBool[i] = case1 or case2
             #print('movBool=', movBool)
             if movBool[i] and not stepperThreads[i].isAlive():
-                print("Stepper %s" % i)
+                #print("Stepper %s" % i)
                 if (case2):
                     dir = Adafruit_MotorHAT.BACKWARD
                     direction = -1
@@ -129,7 +134,7 @@ def moveSteppers(qPos, qRec, qVelReq, stepperThreads, numSteps, TOLERANCE):
                 # set velocity
                 steppers[i].setSpeed(abs(float(w)))
 
-                if (case_v):
+                if (case_v[i]):
                     stepstyle = Adafruit_MotorHAT.SINGLE
                     recorrido_neto = stepDist/d.Decimal(8)
                 else:
