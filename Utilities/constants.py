@@ -9,20 +9,23 @@ except SystemError as e:
 	from decimalMath import deg2rad, cos, sin
 
 # Minimun possible movement and tolerance of math calculations
-EPSILON = d.Decimal(1e-02)
+EPSILON = d.Decimal(1e-01)
 # I.e. if(abs(p0-p1) < EPSILON) then p0==p1
 
 # Length of arms rod to center cart
-L = d.Decimal(150) * d.Decimal(2)
+L = d.Decimal(250) 
+
+# Step maximun distance
+STEP_MAX = d.Decimal(5) # mm
 
 # Squared L
 LSQR = L**2
 
 # Height of the roof of the 3d printer in mm
-VL = d.Decimal(1500)
+VL = d.Decimal(460)
 
 # Radius of the base of the 3d printer in mm
-HL = d.Decimal(150)
+HL = d.Decimal(170)
 
 # Angle of first leg in radians
 THETA1 = deg2rad(d.Decimal(90))
@@ -65,7 +68,7 @@ POS_Y_3 = HL * SIN_THETA2
 
 
 # Start Height Offset against the roof of the robot
-START_POSITION_HEIGHT_OFFSET = d.Decimal(260)
+START_POSITION_HEIGHT_OFFSET = d.Decimal(0) # mm
 
 # Start Position of the robot
 # It is defined in vector.py

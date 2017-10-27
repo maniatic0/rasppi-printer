@@ -4,9 +4,9 @@
 import decimal as d
 
 try:
-	from .constants import VL, EPSILON
+	from .constants import VL, EPSILON, STEP_MAX
 except SystemError as e:
-	from constants import VL, EPSILON
+	from constants import VL, EPSILON, STEP_MAX
 
 
 
@@ -131,8 +131,11 @@ def _setConstants():
 
 _setConstants()
 
-"""Generates Lineary Interpolated points from p0 to p1 with steps of size EPSILON"""
-def interpolatePoints(p0, p1):
+"""
+Generates Lineary Interpolated points from p0 to p1 with steps of size maxStep or less.
+If step lesser than EPSILON then no step is done
+"""
+def interpolatePoints(p0, p1, maxStep=STEP_MAX):
 	direction = p1 - p0
 	length_sqr = direction.sqrMagnitude()
 	if length_sqr < EPSILON**2:
@@ -142,8 +145,8 @@ def interpolatePoints(p0, p1):
 	dist = d.Decimal(0)
 	one = d.Decimal(1)
 
-	segments = int(length_sqr.sqrt() / EPSILON)
-	if segments == 1:
+	segments = int(length_sqr.sqrt() / maxStep)
+	if segments <= 1:
 		yield p0
 		yield p1
 		return

@@ -1,0 +1,181 @@
+Welcome to the MMKF15 project of:
+ * Christian Oliveros
+ * Luis Felipe Leiva
+ * Pablo Correa
+Initializing File Reader
+Initializing Movement
+==============================================================
+Following Instruction: (pos=(188.3030277982336002635218877, 188.3030277982336002635218877, 188.3030277982336002635218877),vel=(-1.000000000000000000000000000, -1.000, -1.000))
+From Position: (193.3030277982336002635218877, 193.3030277982336002635218877, 193.3030277982336002635218877)
+qRec= (188.3030277982336002635218877, 188.3030277982336002635218877, 188.3030277982336002635218877)
+q_req = [Decimal('188.3030277982336002635218877'), Decimal('188.3030277982336002635218877'), Decimal('188.3030277982336002635218877')]
+q_vel_req = [Decimal('-1.000000000000000000000000000'), Decimal('-1.000'), Decimal('-1.000')]
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.18849555921538758 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 0
+Moving stepper i= 0
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 1
+Moving stepper i= 1
+-0.023561944901923447 sec per step
+movBool= [True, True, True]
+Stepper 2
+Moving stepper i= 2
+-0.023561944901923447 sec per step
+movBool= [False, True, True]
+movBool= [False, False, True]
+movBool= [False, False, False]
+Instruction Done
+==============================================================
+==============================================================
+Following Instruction: (pos=(183.3030277982336002635218877, 183.3030277982336002635218877, 183.3030277982336002635218877),vel=(0E-27, 0.0, 0.0))
+From Position: (188.3030277982336002635218877, 188.3030277982336002635218877, 188.3030277982336002635218877)
+qRec= (183.3030277982336002635218877, 183.3030277982336002635218877, 183.3030277982336002635218877)
+q_req = [Decimal('183.3030277982336002635218877'), Decimal('183.3030277982336002635218877'), Decimal('183.3030277982336002635218877')]
+q_vel_req = [Decimal('0E-27'), Decimal('0.0'), Decimal('0.0')]
+movBool= [True, True, True]
+Stepper 0
