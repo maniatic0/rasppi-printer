@@ -24,6 +24,7 @@ import threading
 
 # Imports Used
 
+<<<<<<< HEAD
 try:
 	from ..Utilities.instruction import Instruction, InterpretedInstruction
 except SystemError as e:
@@ -33,6 +34,17 @@ try:
 	from ..Utilities.vector import Vector3, interpolatePoints
 except SystemError as e:
 	from vector import Vector3, interpolatePoints      
+=======
+#try:
+#	from ..Utilities.instruction import Instruction, InterpretedInstruction
+#except SystemError as e:
+#	from instruction import Instruction, InterpretedInstruction
+#
+#try:
+#	from ..Utilities.vector import Vector3, interpolatePoints
+#except SystemError as e:
+#	from vector import Vector3, interpolatePoints      
+>>>>>>> 0fddd1e36a1dd5c5b6f0a5c3bf1cc5012eed01b9
 
 """ constantsMotor module """
 
@@ -92,12 +104,21 @@ def stepper_worker(stepper, numsteps, direction, style):
     #print("Done")
 
 def moveSteppers(qPos, qRec, qVelReq, stepperThreads, numSteps, TOLERANCE):
+<<<<<<< HEAD
     q = [qPos.x, qPos.y, qPos.z]    
     q_req = [qRec.x, qRec.y, qRec.z]        
     q_vel_req = [qVelReq.x, qVelReq.y, qVelReq.z]
     #q = qPos
     #q_req = qRec
     #q_vel_req = qVelReq
+=======
+    #q = [qPos.x, qPos.y, qPos.z]    
+    #q_req = [qRec.x, qRec.y, qRec.z]        
+    #q_vel_req = [qVelReq.x, qVelReq.y, qVelReq.z]
+    q = qPos
+    q_req = qRec
+    q_vel_req = qVelReq
+>>>>>>> 0fddd1e36a1dd5c5b6f0a5c3bf1cc5012eed01b9
     TOLERANCE_v = 2             # before/after this I want the motors to move faster
     print('qRec=', qRec)
     print('q_req = ', q_req)        

@@ -1,13 +1,17 @@
-# Made by Christian Oliveros on 04/10/2017 for MMKF15
+# Made by Christian Oliveros on 05/10/2017 for MMKF15
 
 # Imports Used
 import decimal as d
 import re
-import vector as v
+
+try:
+	from .vector import Vector3
+except SystemError as e:
+	from vector import Vector3
 
 class Instruction(object):
 	"""Regex pattern"""
-	_pattern = r"^(?P<X>([^\s])+) (?P<Y>([^\s])+) (?P<Z>([^\s])+)( (?P<V>([^\s])+))?(\s)*$"
+	_pattern = r"^(\s)*(?P<X>([^\s])+) (?P<Y>([^\s])+) (?P<Z>([^\s])+)( (?P<V>([^\s])+))?(\s)*$"
 	"""Regex state machine"""
 	_prog = re.compile(_pattern)
 	"""Instruction for the Arm
@@ -17,10 +21,19 @@ class Instruction(object):
 		line = line.rstrip()
 		result = Instruction._prog.match(line)
 		if result is None:
-			raise ValueError(("The instruction format should be \"X Y Z <V>\" but found \"%s\"" % (line)))
-		self.pos = v.Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
+			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
+
+		try:
+			self.pos = Vector3(d.Decimal(result.group('X')), d.Decimal(result.group('Y')), d.Decimal(result.group('Z')))
+		except Exception as e:
+			raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
+
+		
 		if result.group('V') is not None:
-			self.V = d.Decimal(result.group('V'))
+			try:
+				self.V = d.Decimal(result.group('V'))
+			except Exception as e:
+				raise ValueError(("The instruction format should be numbers in the form \"X Y Z <V>\" but found \"%s\"" % (line)))
 		else:
 			self.V = None
 
@@ -38,6 +51,23 @@ class Instruction(object):
 	"""Instruction string representation"""
 	def __str__(self):
 		return Instruction.fromValuesToLine(self.pos.x, self.pos.y, self.pos.z, self.V)
+
+
+class InterpretedInstruction(object):
+	"""Intruction with vector position and velocity"""
+	def __init__(self, pos, vel):
+		super(InterpretedInstruction, self).__init__()
+		self.pos = pos
+		self.vel = vel
+
+	"""Interpreted Instruction representation"""
+	def __repr__(self):
+		return "InterpretedInstruction(pos=%r,vel=%r)" % (self.pos, self.vel)
+
+	"""Interpreted Instruction string representation"""
+	def __str__(self):
+		return "(pos=%s,vel=%s)" % (self.pos, self.vel)
+		
 
 if __name__ == '__main__':
 	Instruction("1 2 3")

@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"read",
+				"reader"
+			],
+			[
+				"if",
+				"if\tIf Condition"
+			],
+			[
+				"con",
+				"constants"
+			],
+			[
+				"In",
+				"InterpretedInstruction"
+			],
+			[
+				"vec",
+				"vector"
+			],
+			[
+				"ge",
+				"generateJointPathTrajectory"
+			],
+			[
+				"ins",
+				"instruction"
+			],
+			[
+				"st",
+				"START_POSITION"
+			],
+			[
+				"star",
+				"START_VELOCITY"
+			],
+			[
+				"fi",
+				"fileReader"
+			],
+			[
+				"deg2rad",
+				"DEG2RAD"
+			],
+			[
+				"Ve",
+				"Vector3"
+			],
+			[
+				"re",
+				"reader"
+			],
+			[
+				"cur",
+				"current_pos"
+			],
+			[
+				"in",
+				"instruction"
+			],
+			[
+				"sq",
+				"sqrt"
+			],
+			[
+				"de",
+				"decimal"
+			],
+			[
+				"f",
+				"fromValuesToLine"
+			],
+			[
+				"__",
+				"__repr__"
+			],
+			[
+				"def",
+				"def\tFunction"
+			],
+			[
 				"norm",
 				"normalized"
 			],
@@ -16,10 +96,6 @@
 				"normalize"
 			],
 			[
-				"if",
-				"if\tIf Condition"
-			],
-			[
 				"try",
 				"try\tTry/Except"
 			],
@@ -28,20 +104,8 @@
 				"Vector3"
 			],
 			[
-				"__",
-				"__repr__"
-			],
-			[
-				"def",
-				"defs\tMethod"
-			],
-			[
 				"N",
 				"N"
-			],
-			[
-				"vec",
-				"vec3"
 			],
 			[
 				"us",
@@ -67,6 +131,15 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "main.py",
+			"settings":
+			{
+				"buffer_size": 1055,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
@@ -108,7 +181,7 @@
 	},
 	"console":
 	{
-		"height": 0.0,
+		"height": 130.0,
 		"history":
 		[
 		]
@@ -124,31 +197,71 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer"
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test"
 	],
 	"file_history":
 	[
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/wave.frag",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/wave.vert",
+		"/C/Users/Christian/Desktop/wifi_start.bat",
+		"/C/Users/Christian/Downloads/Telegram Desktop/mierdon",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/phong.frag",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/texture_phong.frag",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/T-50.obj",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/AIM120D.blend.obj",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/mig21C.obj",
+		"/C/Users/Christian/Downloads/Telegram Desktop/plane (3).cpp",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/T-50.mtl",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/t50_pak-fa/T-50.obj",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/t50_pak-fa/T-50.mtl",
+		"/C/Users/Christian/Downloads/Telegram Desktop/plane (2).cpp",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/texture_phon.vert",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/phong.vert",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/default.frag",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/default.vert",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/res/scenes/AIM120D.obj",
+		"/C/Users/Christian/Downloads/Telegram Desktop/phong (2).frag",
+		"/C/Users/Christian/Downloads/Telegram Desktop/phong (2).vert",
+		"/C/Users/Christian/Downloads/Telegram Desktop/phong.frag",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/parametric_shapes.cpp",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/assignment4.cpp",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/EDAF80_Assignment5.vcxproj.filters",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/CMakeLists.txt",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/EDAF80_Assignment5.vcxproj",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/cmake_install.cmake",
+		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/src/EDAF80/basicNode.h",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/fileReader.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/decimalMath.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/constants.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/vector.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/instruction.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/trajectoryGeneration.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/__init__.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Motors/constantsMotor.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Motors/moveMotors.py",
+		"/C/Users/Christian/Google Drive/Lund/Clases/MMKF15 Applied Robotics/Lab/Kinematic_Assignment_Christian_Oliveros.m",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/correct_test.txt",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/bad_test.txt",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/Utilities/Test/correct_test.text",
+		"/C/Users/Christian/Google Drive/Maratones/GANNHAT/gannhat2.cpp",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/vector.py",
+		"/C/Users/Christian/Desktop/RaspPi/rasppi-printer/rasp-proy.sublime-project",
 		"/C/Users/Christian/Google Drive/Libros/Procesando/vector.py",
 		"/C/Users/Christian/Google Drive/Libros/Procesando/rasp-proy.sublime-project",
 		"/C/Users/Christian/Downloads/CollisionAvoidance.cs",
 		"/C/Users/Christian/Downloads/ObstacleAvoidance.cs",
 		"/C/Users/Christian/Downloads/CentralWithShortWhiskers.cs",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/blinnPhong.vert",
-		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/phong.vert",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/blinnPhong.frag",
-		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/phong.frag",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/skybox.frag",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/skybox.vert",
-		"/C/Users/Christian/Downloads/Telegram Desktop/phong (2).frag",
-		"/C/Users/Christian/Downloads/Telegram Desktop/phong (2).vert",
 		"/C/Users/Christian/Downloads/Telegram Desktop/assignment3 (2).cpp",
 		"/C/Users/Christian/Downloads/Telegram Desktop/assignment3.cpp",
 		"/C/Users/Christian/Downloads/Telegram Desktop/phong.vert",
-		"/C/Users/Christian/Downloads/Telegram Desktop/phong.frag",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/tangent.vert",
-		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/default.frag",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/tangent.frag",
-		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/default.vert",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/skybox.vet.vs",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/texcoord.vert",
 		"/C/Users/Christian/Documents/Lund/Project/CG_Labs/shaders/EDAF80/texcoord.frag",
@@ -171,7 +284,6 @@
 		"/C/Users/Christian/Google Drive/Lund/Clases/EDAF80 Computer Graphics/Project/Build/error.txt",
 		"/C/Users/Christian/Google Drive/Lund/Clases/EDAF80 Computer Graphics/Project/Build/cmake_install.cmake",
 		"/C/Users/Christian/Google Drive/Maratones/DISTANCE/DISTANCE.cpp",
-		"/C/Users/Christian/Desktop/wifi_start.bat",
 		"/C/Users/Christian/Google Drive/Lund/Clases/EDAF80 Computer Graphics/Project/CG_Labs/CMakeLists.txt",
 		"/C/Users/Christian/SkyDrive/Documents/Juego/Juego ANAR/Library/UnityAssemblies/UnityEngine.dll",
 		"/C/Users/Christian/Google Drive/CEIC/Tecnología/ceicsv.sql",
@@ -197,6 +309,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TBN",
+			"mtl",
+			"\\",
+			"mtl",
+			"pilot",
+			"m.",
+			"c.",
+			"vec.",
+			"ins.",
+			"ins",
+			"v.",
+			"reader",
+			"generatePathTrajectory",
+			"ins",
+			"prog",
+			"pattern"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -204,6 +332,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"TNB",
+			"/",
+			"",
+			"generateCartesianPathTrajectory",
+			"_prog",
+			"_pattern"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -214,8 +348,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "main.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								684,
+								684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 317.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -225,7 +388,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -252,7 +415,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 102.0
+		"height": 155.0
 	},
 	"output.find_results":
 	{
