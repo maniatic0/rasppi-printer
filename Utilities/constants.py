@@ -13,19 +13,19 @@ EPSILON = d.Decimal(1e-01)
 # I.e. if(abs(p0-p1) < EPSILON) then p0==p1
 
 # Length of arms rod to center cart
-L = d.Decimal(250) 
+L = d.Decimal(290) # 290
 
 # Step maximun distance
-STEP_MAX = d.Decimal(5) # mm
+STEP_MAX = d.Decimal(10) # mm
 
 # Squared L
 LSQR = L**2
 
 # Height of the roof of the 3d printer in mm
-VL = d.Decimal(460)
+VL = d.Decimal(440) # 440
 
 # Radius of the base of the 3d printer in mm
-HL = d.Decimal(170)
+HL = d.Decimal(160) # 160
 
 # Angle of first leg in radians
 THETA1 = deg2rad(d.Decimal(90))

@@ -38,6 +38,9 @@ except SystemError as e:
 
 """ constantsMotor module """
 
+# calibration constant
+cte = d.Decimal(10)
+
 # gear motor radius in milimeters
 R = d.Decimal(6)
 
@@ -85,7 +88,7 @@ def angVel(qi_vel):
 # distStepMotor: distance per step
 # direction: can be 1 or -1
 def posUpdate(qPos, numMotor, numSteps, distStepMode, direction):
-    qPos[numMotor] += d.Decimal(direction)*numSteps*distStepMode
+    qPos[numMotor] += d.Decimal(direction)*(numSteps*distStepMode - d.Decimal((3/17)-(1/8))) 
     return qPos
 
 def stepper_worker(stepper, numsteps, direction, style):
@@ -94,9 +97,9 @@ def stepper_worker(stepper, numsteps, direction, style):
     #print("Done")
 
 def moveSteppers(qPos, qRec, qVelReq, stepperThreads, numSteps, TOLERANCE):
-    q = [qPos.x, qPos.y, qPos.z]    
-    q_req = [qRec.x, qRec.y, qRec.z]        
-    q_vel_req = [qVelReq.x, qVelReq.y, qVelReq.z]
+    q = [qPos.x / cte, qPos.y / cte, qPos.z / cte]    
+    q_req = [qRec.x / cte, qRec.y / cte, qRec.z / cte]        
+    q_vel_req = [qVelReq.x / cte, qVelReq.y / cte, qVelReq.z / cte]
     TOLERANCE_v = d.Decimal(2)             # before/after this I want the motors to move faster
     
     case_v = [True, True, True]
@@ -176,7 +179,7 @@ steppers = [myStepper1, myStepper2, myStepper3]
 TOLERANCE = makeTolerance(stepstyle, numSteps)        
 
 def movMotor(qPos, inst):
-    # move motors    
+    # move motors
     moveSteppers(qPos, inst.pos, inst.vel, stepperThreads, numSteps, TOLERANCE)
         
 if __name__ == '__main__':
